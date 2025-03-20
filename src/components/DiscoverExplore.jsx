@@ -3,7 +3,7 @@ const DiscoverExplore = () => {
   const categories = [
     {
       id: 1,
-      title: 'Clear & Clear Pools',
+      title: 'Clear & Clean Pools',
       description: 'Indulge in a refreshing escape at our luxurious hotel pools, designed for ultimate relaxation and enjoyment.',
       image: '../img/Discover1.jpg'
     },

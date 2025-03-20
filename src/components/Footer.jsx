@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-8 text-center">
-        <p>Thank you for choosing DEELUCK, your trusted travel companion. Safe travels!</p>
+        <p>Thank you for choosing DEELUCK, your Home Away from Home. Happy Staying!</p>
       </div>
     </footer>
   );

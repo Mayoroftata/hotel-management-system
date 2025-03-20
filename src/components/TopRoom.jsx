@@ -49,7 +49,7 @@ const TopRoom = () => {
                 <span className="mr-2">{room.rating} ⭐</span>
                 <span>({room.reviews})</span>
               </div>
-              <p>#{room.price}</p>
+              <p>₦{room.price}</p>
             </div>
           ))}
           <div className="bg-black p-4 rounded-lg shadow-md w-full md:w-1/4 border border-amber-50 h-80 flex flex-col justify-center items-center">
