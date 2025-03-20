@@ -56,7 +56,7 @@ export default function LandingNavBar() {
               onClick={() => toggleDropdown('rooms')}
               className="text-blue-900 block focus:outline-none hover:text-yellow-500 md:inline"
             >
-              ROOMS & SUITS
+              ROOMS & SUITES
             </button>
             {activeDropdown === 'rooms' && (
               <div className="md:absolute md:bg-white md:mt-2 md:overflow-hidden md:rounded-md md:shadow-lg md:w-48 md:z-10">

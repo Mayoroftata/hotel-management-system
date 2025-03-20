@@ -34,7 +34,7 @@ const DiscoverExplore = () => {
         <p className="text-center mb-8">Make the most of your trip with our curated tours and exciting attractions.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map((category) => (
-            <div key={category.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={category.id} className="bg-white rounded-lg shadow-md overflow-hidden text-center">
               <img src={category.image} alt={category.title} className="w-full h-48 object-cover" />
               <div className="p-4">
                 <h3 className="text-lg font-semibold bg-blue-900 text-white p-2">{category.title}</h3>

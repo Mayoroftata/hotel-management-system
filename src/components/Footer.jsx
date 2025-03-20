@@ -53,7 +53,7 @@ export default function Footer() {
           <nav className="space-y-2">
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <Link href="/rooms" passHref legacyBehavior>
-              <a className="block text-blue-900 hover:text-yellow-500">ROOMS & SUITS</a>
+              <a className="block text-blue-900 hover:text-yellow-500">ROOMS & SUITES</a>
             </Link>
             <Link href="/events" passHref legacyBehavior>
               <a className="block text-blue-900 hover:text-yellow-500">MEETINGS & EVENTS</a>
