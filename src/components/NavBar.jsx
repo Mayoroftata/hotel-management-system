@@ -55,7 +55,7 @@ export default function NavBar() {
     <nav className="bg-white p-4">
       <div className="container flex justify-between items-center mx-auto">
         {/* Logo */}
-        <Link href="Dashboard" className="text-2xl text-blue-900 font-bold">
+        <Link href="/" className="text-2xl text-blue-900 font-bold">
           DEELUCK
         </Link>
 
