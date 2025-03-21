@@ -10,7 +10,6 @@ export default function LandingNavBar() {
   // Toggle mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // alert("working")
   };
 
   // Toggle dropdown
