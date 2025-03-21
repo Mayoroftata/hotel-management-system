@@ -46,9 +46,8 @@ export default function LandingNavBar() {
 
         {/* Navigation Links */}
         <div
-          className={`md:flex space-x-6 absolute md:relative top-full left-0 right-0 bg-gray-200 md:bg-transparent cursor-pointer p-4 md:p-0 mt-2 md:mt-0 ${
-            isMenuOpen ? 'block' : 'hidden'
-          }`}
+          className={`md:flex space-x-6 absolute md:relative top-full left-0 right-0 bg-gray-200 md:bg-transparent cursor-pointer p-4 md:p-0 mt-2 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'
+            }`}
         >
           {/* Rooms & Suits Dropdown */}
           <div className="relative">
@@ -61,7 +60,7 @@ export default function LandingNavBar() {
             {activeDropdown === 'rooms' && (
               <div className="md:absolute md:bg-white md:mt-2 md:overflow-hidden md:rounded-md md:shadow-lg md:w-48 md:z-10">
                 <Link
-                  href="/Client/deluxe"
+                  href="/deluxe"
                   className="text-gray-800 block cursor-pointer hover:bg-gray-100 md:border-t md:first:border-t-0 px-4 py-2"
                 >
                   Deluxe Rooms

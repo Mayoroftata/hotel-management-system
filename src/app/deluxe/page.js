@@ -1,20 +1,20 @@
 "use client";
 import Footer from "@/components/Footer";
 import Recommendations from "@/components/Recommendations";
-import UserNav from "@/components/UserNav";
 import Link from "next/link";
 import React from "react";
+import NavBar from "@/components/NavBar";
 
 const page = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="bg-gray-100 min-h-screen">
       {/* Navigation Bar */}
-      <UserNav />
+      <NavBar />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-8 my-5">
+      <div className="container mx-auto my-5 px-4 py-8">
         {/* Header Section */}
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Deluxe Rooms.</h1>
+        <h1 className="text-3xl text-gray-800 font-bold mb-4">Deluxe Rooms.</h1>
         <p className="text-gray-600 mb-8">
           Choose our best deluxe rooms with spacious walk-in closets, Italian
           marble bathrooms, teak floors, and oak wood desks. Breathe easy with
@@ -23,15 +23,15 @@ const page = () => {
         </p>
 
         {/* Deluxe Rooms Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Deluxe Room 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <img
               src="../img/TopRoom5.jpg"
               alt="Deluxe Room 1"
-              className="w-full h-96 object-cover rounded-lg mb-4"
+              className="h-96 rounded-lg w-full mb-4 object-cover"
             />
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+            <h2 className="text-2xl text-gray-800 font-semibold mb-2">
               Deluxe Room 1
             </h2>
             <p className="text-gray-600 mb-4">
@@ -54,12 +54,12 @@ const page = () => {
                 <p className="text-gray-600">33 square metres</p>
               </div>
             </div>
-            <div className="mt-4 flex space-x-4">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-                <Link href="/Client/deluxe/room1">EXPLORE</Link>
+            <div className="flex mt-4 space-x-4">
+              <button className="bg-blue-600 rounded-md text-white duration-300 hover:bg-blue-700 px-4 py-2 transition">
+                <Link href="/deluxe/room1">EXPLORE</Link>
               </button>
-              <button className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition duration-300">
-                <Link href="/Client/deluxe/room1">BOOK</Link>
+              <button className="bg-yellow-500 rounded-md text-white duration-300 hover:bg-yellow-600 px-4 py-2 transition">
+                <Link href="/deluxe/room1">BOOK</Link>
               </button>
             </div>
           </div>
@@ -69,9 +69,9 @@ const page = () => {
             <img
               src="../img/TopRoom2.jpg"
               alt="Deluxe Room 2"
-              className="w-full h-96 object-cover rounded-lg mb-4"
+              className="h-96 rounded-lg w-full mb-4 object-cover"
             />
-            <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+            <h2 className="text-2xl text-gray-800 font-semibold mb-2">
               Deluxe Room 2
             </h2>
             <p className="text-gray-600 mb-4">
@@ -91,12 +91,12 @@ const page = () => {
                 <p className="text-gray-600">35 square metres</p>
               </div>
             </div>
-            <div className="mt-4 flex space-x-4">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-                <Link href="/Client/deluxe/room2">EXPLORE</Link>
+            <div className="flex mt-4 space-x-4">
+              <button className="bg-blue-600 rounded-md text-white duration-300 hover:bg-blue-700 px-4 py-2 transition">
+                <Link href="/deluxe/room2">EXPLORE</Link>
               </button>
-              <button className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition duration-300">
-                <Link href="/Client/deluxe/room2">BOOK</Link>
+              <button className="bg-yellow-500 rounded-md text-white duration-300 hover:bg-yellow-600 px-4 py-2 transition">
+                <Link href="/deluxe/room2">BOOK</Link>
               </button>
             </div>
           </div>
