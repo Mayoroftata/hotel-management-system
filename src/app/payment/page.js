@@ -26,7 +26,7 @@ const Page = () => {
     })
     return (
         <div>
-            <div className='justify-center flex items-center  min-h-screen bg-blue-900'>
+            <div className='justify-center flex py-3 items-center  min-h-screen bg-blue-900'>
                 <div className='bg-white  w-full max-w-lg mx-6 border border-white/20 shadow rounded'>
                     <div className='border border-blue-900 rounded pl-3 md:mx-4 mx-5 py-1 my-3'>
                         <p className='font-bold text-blue-900 text-lg'>Payment Details</p>
