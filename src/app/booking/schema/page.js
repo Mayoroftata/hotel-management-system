@@ -1,5 +1,5 @@
 import * as yup from "yup"
-const match = /^\d{11}$/
+const match = /^\d{10}$/
 
 
 export const bookingSchema = yup.object().shape({

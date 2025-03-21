@@ -1,4 +1,5 @@
 // components/LandingNavBar.js
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -9,6 +10,7 @@ export default function LandingNavBar() {
   // Toggle mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // alert("working")
   };
 
   // Toggle dropdown
@@ -25,30 +27,14 @@ export default function LandingNavBar() {
         </Link>
 
         {/* Mobile Menu Toggle */}
-        <button
-          onClick={toggleMenu}
-          className="focus:outline-none md:hidden"
-        >
-          <svg
-            className="h-6 text-blue-900 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <button onClick={toggleMenu} className="focus:outline-none md:hidden" aria-label="Toggle Menu">
+          <Image src='/images/hamburger.svg' width={30} height={0} alt='Menu' />
         </button>
 
         {/* Navigation Links */}
         <div
-          className={`md:flex space-x-6 absolute md:relative top-full left-0 right-0 bg-gray-200 md:bg-transparent cursor-pointer p-4 md:p-0 mt-2 md:mt-0 ${
-            isMenuOpen ? 'block' : 'hidden'
-          }`}
+          className={`md:flex space-x-6 absolute md:relative top-full left-0 right-0 bg-gray-200 md:bg-transparent cursor-pointer p-4 md:p-0 mt-2 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'
+            }`}
         >
           {/* Rooms & Suits Dropdown */}
           <div className="relative">
@@ -136,7 +122,7 @@ export default function LandingNavBar() {
         </div>
 
         {/* Buttons */}
-        <div className="flex space-x-4">
+        <div className="hidden md:block flex space-x-4">
           <button className="bg-white border border-blue-900 rounded text-blue-900 cursor-pointer hover:bg-blue-900 hover:text-white px-4 py-2">
             <Link
               href="/login">

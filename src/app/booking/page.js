@@ -1,15 +1,13 @@
 "use client"
 import React from 'react'
 import { useFormik } from 'formik'
-import * as Yup from "yup"
 import Link from 'next/link'
-import Image from 'next/image'
-// import { bookingSchema } from './schemas/page'
 import { bookingSchema } from './schema/page'
 import { useRouter } from 'next/navigation'
 
 const Page = () => {
     const router = useRouter()
+
     const onSubmit = (values, e) => {
         console.log("Form submitted", values);
         e.resetForm()
