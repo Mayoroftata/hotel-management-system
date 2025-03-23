@@ -1,23 +1,36 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 import { useFormik } from 'formik'
-import * as Yup from "yup"
 import Link from 'next/link'
 import Image from 'next/image'
 import { basicSchema } from './schemas/page'
 import { useRouter } from 'next/navigation'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 const Page = () => {
     const router = useRouter()
-    const onSubmit = (values, e) => {
+    const [isLoading, setIsLoading] = useState(false)
+
+    // Success Toast
+    const showSuccessToast = (message) => {
+        toast.success(message);
+    };
+
+    const onSubmit = (values, { resetForm }) => {
         console.log("Form submitted", values);
-        localStorage.setItem("userInfo", JSON.stringify(values))
-        e.resetForm()
+        setIsLoading(true)
+
         setTimeout(() => {
-            router.push("/signin")
+            resetForm()
+            showSuccessToast("Signed up successfully")
+            localStorage.setItem("userInfo", JSON.stringify(values))
+            setTimeout(() => {
+                router.push("/signin")
+            }, 1500);
         }, 2000);
-        
     }
+
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         initialValues: {
             firstname: '', lastname: '', email: '', password: '', confirmpassword: ''
@@ -25,7 +38,6 @@ const Page = () => {
         validationSchema: basicSchema,
         onSubmit
     })
-    // console.log(values);
     console.log(errors);
 
     return (
@@ -34,6 +46,7 @@ const Page = () => {
                 <div className='bg-white  w-full max-w-lg mx-6 border border-white/20 shadow rounded'>
                     <h1 className='font-bold ps-4 text-center text-blue-900 my-3 text-2xl'>Create Account </h1>
                     <div className='px-5 pb-5 space-y-2'>
+                        <ToastContainer position='top-right' autoClose={3000} />
                         <form onSubmit={handleSubmit} className='space-y-2'>
                             <div className='flex space-x-3'>
                                 <div className='w-full'>
@@ -58,7 +71,9 @@ const Page = () => {
                                 {errors.confirmpassword && touched.confirmpassword && (<p className="text-red-500 text-sm">{errors.confirmpassword}</p>)}
                             </div>
                             <div>
-                                <button type='submit' className='font-bold rounded-lg text-white w-full bg-blue-900 py-2 hover:bg-blue-900'>Sign Up</button>
+                                <button type='submit' disabled={isLoading} className='font-bold rounded-lg text-white w-full bg-blue-900 py-2 hover:bg-blue-900'>
+                                    {isLoading ? <PulseLoader size={13} color="#fff" /> : "Sign Up"}
+                                </button>
                             </div>
                         </form>
                         <div>
