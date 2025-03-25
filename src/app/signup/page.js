@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { basicSchema } from './schemas/page'
 import { useRouter } from 'next/navigation'
 import PulseLoader from 'react-spinners/PulseLoader'
+import { signIn } from "next-auth/react"
 
 const Page = () => {
     const router = useRouter()
@@ -40,6 +41,10 @@ const Page = () => {
     })
     console.log(errors);
 
+    const googleSign = async () => {
+        await signIn("google", { callbackUrl: "/Client/ClientDashboard" })
+    }
+
     return (
         <div>
             <div className='justify-center flex items-center  min-h-screen bg-blue-900'>
@@ -71,7 +76,7 @@ const Page = () => {
                                 {errors.confirmpassword && touched.confirmpassword && (<p className="text-red-500 text-sm">{errors.confirmpassword}</p>)}
                             </div>
                             <div>
-                                <button type='submit' disabled={isLoading} className='font-bold rounded-lg text-white w-full bg-blue-900 py-2 hover:bg-blue-900'>
+                                <button type='submit' disabled={isLoading} className={`font-bold rounded-lg text-white w-full bg-blue-900 py-2 hover:bg-blue-800 ${isLoading ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}>
                                     {isLoading ? <PulseLoader size={13} color="#fff" /> : "Sign Up"}
                                 </button>
                             </div>
@@ -85,9 +90,9 @@ const Page = () => {
                             <hr className='flex-1 border-gray-300' />
                         </div>
                         <div className='flex space-x-3'>
-                            <button className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/google.svg" width={23} height={1} /></button>
+                            <button onClick={googleSign} type='button' className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/google.svg" width={23} height={1} /></button>
                             <button className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/github.svg" width={30} height={1} /></button>
-                            <button className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/facebook.svg" width={21} height={1} /></button>
+                            <button className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='facebook' src="/images/facebook.svg" width={21} height={1} /></button>
                         </div>
                     </div>
                 </div>
