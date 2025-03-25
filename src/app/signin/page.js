@@ -89,10 +89,8 @@ const Page = () => {
                             <p className='text-center text-blue-900'> or  with </p>
                             <hr className='flex-1 border-gray-300' />
                         </div>
-                        <div className=''>
+                        <div>
                             <button onClick={googleSign} type='button' className='bg-blue-900 rounded-lg w-full py-2 flex items-center justify-center'><Image alt='google' src="/images/google.svg" width={23} height={1} /></button>
-                            {/* <button className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/github.svg" width={30} height={1} /></button>
-                            <button onClick={facebookSign} type='button' className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='facebook' src="/images/facebook.svg" width={21} height={1} /></button> */}
                         </div>
                     </div>
                 </div>
