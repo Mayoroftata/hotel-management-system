@@ -96,7 +96,7 @@ const page = () => {
             <p className="text-gray-600">12:00 - 12:00</p>
           </div>
           <button className="bg-blue-600 rounded-md text-white duration-300 hover:bg-blue-700 px-4 py-2 transition">
-            BOOK NOW
+          <Link href="/booking">Book Now</Link>
           </button>
         </div>
 

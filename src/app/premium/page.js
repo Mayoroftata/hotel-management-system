@@ -52,7 +52,7 @@ const page = () => {
           </p>
           <p className="text-xl font-semibold mb-4">₦400,000 per night</p>
           <button className="bg-purple-600 rounded-md text-white duration-300 hover:bg-purple-700 px-4 py-2 transition">
-            CHECK AVAILABILITY
+            <Link href="/booking">Book Now</Link>
           </button>
         </div>
 
