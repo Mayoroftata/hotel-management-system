@@ -156,7 +156,7 @@ export default function NavBar() {
             href="/recreation"
             className="text-blue-900 block cursor-pointer hover:text-yellow-500 md:inline"
           >
-            RECREATION CENTER
+            RECREATION CENTRE
           </Link>
           <Link
             href="/support"
