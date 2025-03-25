@@ -1,17 +1,17 @@
 "use client";
 import React from 'react'
-import LandingNavBar from '@/components/LandingNavBar';
 import HeroSection from '@/components/HeroSection';
 import WhyBookWithUs from '@/components/WhyBookWithUs';
 import TopRoom from '@/components/TopRoom';
 import Footer from '@/components/Footer';
 import DiscoverExplore from '@/components/DiscoverExplore';
+import NavBar from '@/components/NavBar';
 
 
 const page = () => {
   return (
     <div>
-      <LandingNavBar />
+      <NavBar />
       <HeroSection />
       <WhyBookWithUs />
       <TopRoom />

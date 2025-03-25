@@ -46,7 +46,7 @@ export default function LandingNavBar() {
             {activeDropdown === 'rooms' && (
               <div className="md:absolute md:bg-white md:mt-2 md:overflow-hidden md:rounded-md md:shadow-lg md:w-48 md:z-10">
                 <Link
-                  href="/Client/deluxe"
+                  href="/deluxe"
                   className="text-gray-800 block cursor-pointer hover:bg-gray-100 md:border-t md:first:border-t-0 px-4 py-2"
                 >
                   Deluxe Rooms
@@ -61,7 +61,7 @@ export default function LandingNavBar() {
                   href="/rooms/premium"
                   className="text-gray-800 block cursor-pointer hover:bg-gray-100 px-4 py-2"
                 >
-                  Premium Rooms
+                  Premium Penthouse
                 </Link>
               </div>
             )}
