@@ -48,11 +48,6 @@ const Page = () => {
     // console.log(values);
     console.log(errors);
 
-    // const session = async () => {
-    //     await auth("")
-    //     console.log(session);
-
-    // }
     const googleSign = async () => {
         await signIn("google", { callbackUrl: "/Client/ClientDashboard" })
     }
