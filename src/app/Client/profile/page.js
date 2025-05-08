@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import React from "react";
 
-const page = () => {
+export default function ProfilePage() {
   return (
     <div>
       <NavBar />
@@ -155,7 +155,7 @@ const page = () => {
             <p>
               Thank you for choosing TravelEase. We're dedicated to making your
               travel experience the best it can be. If you have any questions or
-              need assistance, don't hesitate to reach out to us.
+              need assistance, don&apos;t hesitate to reach out to us.
             </p>
           </footer>
         </div>
@@ -163,6 +163,4 @@ const page = () => {
       <Footer />
     </div>
   );
-};
-
-export default page;
+}

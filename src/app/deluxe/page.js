@@ -4,6 +4,7 @@ import Recommendations from "@/components/Recommendations";
 import Link from "next/link";
 import React from "react";
 import NavBar from "@/components/NavBar";
+import Image from 'next/image'; // Import Image component
 
 const page = () => {
   return (
@@ -26,9 +27,11 @@ const page = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Deluxe Room 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <img
+            <Image
               src="../img/TopRoom5.jpg"
               alt="Deluxe Room 1"
+              width={800}
+              height={500}
               className="h-96 rounded-lg w-full mb-4 object-cover"
             />
             <h2 className="text-2xl text-gray-800 font-semibold mb-2">
@@ -46,7 +49,7 @@ const page = () => {
               <div>
                 <p className="font-medium">View</p>
                 <p className="text-gray-600">
-                  Humayun's Tomb or Delhi Golf Course
+                  Humayun&apos;s Tomb or Delhi Golf Course
                 </p>
               </div>
               <div>
@@ -66,9 +69,11 @@ const page = () => {
 
           {/* Deluxe Room 2 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <img
+            <Image
               src="../img/TopRoom2.jpg"
               alt="Deluxe Room 2"
+              width={800}
+              height={500}
               className="h-96 rounded-lg w-full mb-4 object-cover"
             />
             <h2 className="text-2xl text-gray-800 font-semibold mb-2">
@@ -78,7 +83,7 @@ const page = () => {
               A luxurious retreat designed for comfort and style. This Deluxe
               Room offers a serene ambiance with elegant decor and modern
               amenities. Large windows provide panoramic views of the city
-              skyline, while plush bedding ensures a restful night's sleep.
+              skyline, while plush bedding ensures a restful night&apos;s sleep.
               Ideal for both business and leisure stays.
             </p>
             <div className="flex justify-between">

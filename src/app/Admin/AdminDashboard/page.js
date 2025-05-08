@@ -2,6 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image component
 
 export default function AdminDashboard() {
   const [activeSection, setActiveSection] = useState('dashboard');
@@ -74,9 +75,11 @@ export default function AdminDashboard() {
           <h1 className="text-xl font-bold">{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</h1>
           <div className="flex items-center space-x-4">
             <span>Welcome, Admin</span>
-            <img
+            <Image
               src="/path/to/admin-avatar.png"
               alt="Admin Avatar"
+              width={32}
+              height={32}
               className="w-8 h-8 rounded-full"
             />
           </div>

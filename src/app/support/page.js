@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import React from "react";
 import { useState } from "react";
 
-const page = () => {
+export default function Page() {
   const faqs = [
     {
       question: "Enhanced cleaning",
@@ -34,45 +34,39 @@ const page = () => {
     },
   ];
 
-   // State to track expanded/collapsed FAQs
-   const [isExpanded, setIsExpanded] = useState(new Array(faqs.length).fill(false));
+  // State to track expanded/collapsed FAQs
+  const [isExpanded, setIsExpanded] = useState(new Array(faqs.length).fill(false));
 
-   // Function to toggle the expanded state of an FAQ
-   const toggleAnswer = (index) => {
-     const updatedExpanded = [...isExpanded];
-     updatedExpanded[index] = !updatedExpanded[index];
-     setIsExpanded(updatedExpanded);
-    }
+  // Function to toggle the expanded state of an FAQ
+  const toggleAnswer = (index) => {
+    const updatedExpanded = [...isExpanded];
+    updatedExpanded[index] = !updatedExpanded[index];
+    setIsExpanded(updatedExpanded);
+  };
+
   return (
     <div className="bg-blue-900">
       <NavBar />
       <div className="bg-blue-900 min-h-screen">
         {/* Header */}
         <section id='sectionHero' className="flex bg-center bg-cover h-screen justify-center text-white items-center relative">
-        {/* Background Image */}
-        <div className="bg-gradient-to-b absolute from-black inset-0 opacity-75 to-black via-transparent"></div>
-        {/* <img
-          src="../img/hotelimage2.jpg"
-          alt="Hotel Corridor"
-          className="h-full w-full absolute inset-0 object-cover"
-        /> */}
-
-        {/* Content Overlay */}
-        <div className="lg:px-8 px-4 relative sm:px-6 z-10">
-          <div className="text-center">
-          <h1 className="text-6xl text-center text-white font-extrabold mb-6">
-              Support
-            </h1>
-            <p className="text-3xl text-center text-white font-semibold mb-6">
-              We are here to help
-            </p>
-            <p className="text-center text-lg text-white leading-relaxed max-w-3xl mb-8 mx-auto">
-                <span className="text-white font-semibold">DeeLuck,</span> we are committed to providing exceptional customer service and ensuring your stay is comfortable and memorable. Wether you need assistance with your booking, have questions about our services, or need help with anything else, our support team is here to help.
-            </p>
-
+          {/* Background Image */}
+          <div className="bg-gradient-to-b absolute from-black inset-0 opacity-75 to-black via-transparent"></div>
+          {/* Content Overlay */}
+          <div className="lg:px-8 px-4 relative sm:px-6 z-10">
+            <div className="text-center">
+              <h1 className="text-6xl text-center text-white font-extrabold mb-6">
+                Support
+              </h1>
+              <p className="text-3xl text-center text-white font-semibold mb-6">
+                We are here to help
+              </p>
+              <p className="text-center text-lg text-white leading-relaxed max-w-3xl mb-8 mx-auto">
+                <span className="text-white font-semibold">DeeLuck,&#39;</span> we are committed to providing exceptional customer service and ensuring your stay is comfortable and memorable. Whether you need assistance with your booking, have questions about our services, or need help with anything else, our support team is here to help.
+              </p>
+            </div>
           </div>
-        </div>
-    </section>
+        </section>
 
         {/* Main Content */}
         <div className="container bg-blue-900 mx-auto px-4 py-8">
@@ -97,12 +91,6 @@ const page = () => {
                     strokeWidth="2"
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a2 2 0 00-2-2h-5V6a2 2 0 012-2h5v2a2 2 0 012 2v2.158A2.032 2.032 0 0118 14z"
                   />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a2 2 0 00-2-2h-5V6a2 2 0 012-2h5v2a2 2 0 012 2v2.158A2.032 2.032 0 0118 14z"
-                  />
                 </svg>
                 <div>
                   <p className="text-sm font-medium">
@@ -111,7 +99,6 @@ const page = () => {
                   </p>
                 </div>
               </div>
-
               {/* Card 2 */}
               <div className="flex bg-blue-900 p-4 rounded-lg shadow-md items-center outline outline-white space-x-4">
                 <svg
@@ -135,7 +122,6 @@ const page = () => {
                   </p>
                 </div>
               </div>
-
               {/* Card 3 */}
               <div className="flex bg-blue-900 p-4 rounded-lg shadow-md items-center outline outline-white space-x-4">
                 <svg
@@ -159,7 +145,6 @@ const page = () => {
                   </p>
                 </div>
               </div>
-
               {/* Card 4 */}
               <div className="flex bg-blue-900 p-4 rounded-lg shadow-md items-center outline outline-white space-x-4">
                 <svg
@@ -209,7 +194,6 @@ const page = () => {
                 <p className="text-sm font-medium">Accommodation Support</p>
                 <p className="text-sm">+1-800-123-4567</p>
               </div>
-
               {/* Transportation Support */}
               <div className="flex flex-col bg-blue-900 p-4 rounded-lg shadow-md items-center outline outline-white space-y-2">
                 <svg
@@ -229,7 +213,6 @@ const page = () => {
                 <p className="text-sm font-medium">Transportation Support</p>
                 <p className="text-sm">+1-800-234-5678</p>
               </div>
-
               {/* Tours Support */}
               <div className="flex flex-col bg-blue-900 p-4 rounded-lg shadow-md items-center outline outline-white space-y-2">
                 <svg
@@ -249,7 +232,6 @@ const page = () => {
                 <p className="text-sm font-medium">Tours Support</p>
                 <p className="text-sm">+1-800-234-5678</p>
               </div>
-
               {/* Others */}
               <div className="flex flex-col bg-blue-900 p-4 rounded-lg shadow-md items-center outline outline-white space-y-2">
                 <svg
@@ -334,6 +316,4 @@ const page = () => {
       <Footer />
     </div>
   );
-};
-
-export default page;
+}
