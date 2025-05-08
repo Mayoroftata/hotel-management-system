@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { paymentSchema } from "./schema/Page";
+import { paymentSchema } from "./schema/page";
 
 const Page = () => {
   const router = useRouter();

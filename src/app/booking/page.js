@@ -2,7 +2,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import Link from "next/link";
-import { bookingSchema } from "./schema/Page";
+import { bookingSchema } from "./schema/page";
 import { useRouter } from "next/navigation";
 
 const Page = () => {

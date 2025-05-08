@@ -3,7 +3,7 @@ import React from "react";
 import { useFormik } from "formik";
 // import Link from 'next/link'
 // import Image from 'next/image'
-import { forgetPassSchema } from "./schema/Page";
+import { forgetPassSchema } from "./schema/page";
 
 const Page = () => {
   const onSubmit = (values) => {
