@@ -35,7 +35,9 @@ export default function Page() {
   ];
 
   // State to track expanded/collapsed FAQs
-  const [isExpanded, setIsExpanded] = useState(new Array(faqs.length).fill(false));
+  const [isExpanded, setIsExpanded] = useState(
+    new Array(faqs.length).fill(false)
+  );
 
   // Function to toggle the expanded state of an FAQ
   const toggleAnswer = (index) => {
@@ -49,7 +51,10 @@ export default function Page() {
       <NavBar />
       <div className="bg-blue-900 min-h-screen">
         {/* Header */}
-        <section id='sectionHero' className="flex bg-center bg-cover h-screen justify-center text-white items-center relative">
+        <section
+          id="sectionHero"
+          className="flex bg-center bg-cover h-screen justify-center text-white items-center relative"
+        >
           {/* Background Image */}
           <div className="bg-gradient-to-b absolute from-black inset-0 opacity-75 to-black via-transparent"></div>
           {/* Content Overlay */}
@@ -62,7 +67,12 @@ export default function Page() {
                 We are here to help
               </p>
               <p className="text-center text-lg text-white leading-relaxed max-w-3xl mb-8 mx-auto">
-                <span className="text-white font-semibold">DeeLuck,&#39;</span> we are committed to providing exceptional customer service and ensuring your stay is comfortable and memorable. Whether you need assistance with your booking, have questions about our services, or need help with anything else, our support team is here to help.
+                <span className="text-white font-semibold">DeeLuck,&#39;</span>{" "}
+                we are committed to providing exceptional customer service and
+                ensuring your stay is comfortable and memorable. Whether you
+                need assistance with your booking, have questions about our
+                services, or need help with anything else, our support team is
+                here to help.
               </p>
             </div>
           </div>

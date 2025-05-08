@@ -5,7 +5,7 @@ import Link from "next/link";
 import Recommendations from "@/components/Recommendations";
 import NavBar from "@/components/NavBar";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <NavBar />
@@ -125,4 +125,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

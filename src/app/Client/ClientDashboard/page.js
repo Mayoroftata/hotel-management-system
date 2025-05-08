@@ -6,9 +6,7 @@ import WhyBookWithUs from "@/components/WhyBookWithUs";
 import React from "react";
 import NavBar from "@/components/NavBar";
 
-const page = () => {
-
-  
+const Page = () => {
   return (
     <div>
       <NavBar />
@@ -46,4 +44,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

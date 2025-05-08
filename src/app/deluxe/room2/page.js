@@ -3,9 +3,9 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import UserNav from "@/components/NavBar";
 import React from "react";
-import Image from 'next/image'; // Import Image component
+import Image from "next/image"; // Import Image component
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <UserNav />
@@ -15,7 +15,9 @@ const page = () => {
         <Link href="/deluxe" className="text-blue-600 font-bold">
           ← Back to Deluxe Rooms
         </Link>
-        <h1 className="text-2xl text-gray-800 font-bold">Deluxe Room 1 Details</h1>
+        <h1 className="text-2xl text-gray-800 font-bold">
+          Deluxe Room 1 Details
+        </h1>
         <div /> {/* Placeholder for any additional header actions */}
       </header>
 
@@ -116,17 +118,24 @@ const page = () => {
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <h2 className="text-gray-800 text-xl font-semibold mb-4">About</h2>
           <p className="text-gray-600 mb-2">
-            Flanked by palm trees, this upscale hotel is 1 km from Ikeja Golf Club and 7 km from Murtala Muhammed International Airport. The chic rooms provide Wi-Fi, smart TVs, and safes, plus sofas and minibars.
+            Flanked by palm trees, this upscale hotel is 1 km from Ikeja Golf
+            Club and 7 km from Murtala Muhammed International Airport. The chic
+            rooms provide Wi-Fi, smart TVs, and safes, plus sofas and minibars.
           </p>
           <p className="text-gray-600 mb-2">
-            There's a lobby bar, an informal grill, and a buffet restaurant featuring a terrace. Other amenities consist of an outdoor pool, a sundock and a fitness room, as well as breakfast, event space, and parking.
+            There's a lobby bar, an informal grill, and a buffet restaurant
+            featuring a terrace. Other amenities consist of an outdoor pool, a
+            sundock and a fitness room, as well as breakfast, event space, and
+            parking.
           </p>
           <p className="text-gray-600">Check-in time: 15:00</p>
         </div>
 
         {/* Amenities Section */}
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-gray-800 text-xl font-semibold mb-4">Amenities</h2>
+          <h2 className="text-gray-800 text-xl font-semibold mb-4">
+            Amenities
+          </h2>
 
           {/* Room Amenities */}
           <div className="mb-6">
@@ -136,7 +145,8 @@ const page = () => {
                 24 hour butler service
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                Air conditioning, with temperature control units fitted in the room
+                Air conditioning, with temperature control units fitted in the
+                room
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Blackout roller blinds
@@ -148,10 +158,12 @@ const page = () => {
                 Hypoallergenic goose down pillows and duvets
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                Pillow menu features a range to suit every sensitivity, body shape and personal preference
+                Pillow menu features a range to suit every sensitivity, body
+                shape and personal preference
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                Fire rated and sound insulated single leaf room doors with door camera for security and comfort
+                Fire rated and sound insulated single leaf room doors with door
+                camera for security and comfort
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Triple glazed thermal insulated windows
@@ -164,7 +176,9 @@ const page = () => {
 
           {/* Technology Amenities */}
           <div className="mb-6">
-            <h3 className="text-gray-700 text-lg font-medium mb-2">Technology</h3>
+            <h3 className="text-gray-700 text-lg font-medium mb-2">
+              Technology
+            </h3>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 md:grid-cols-2">
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Electronic safe for valuables
@@ -179,7 +193,8 @@ const page = () => {
                 49&quot; FHD television
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                Wide range of national and international news, sports and film channels
+                Wide range of national and international news, sports and film
+                channels
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Integrated lighting system
@@ -188,7 +203,9 @@ const page = () => {
                 Bluetooth enabled speaker system
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                DeeLuck Enhance iPad interface to control room lights, blinds, air-conditioning, television channels, movies on demand, in room dining and much more
+                DeeLuck Enhance iPad interface to control room lights, blinds,
+                air-conditioning, television channels, movies on demand, in room
+                dining and much more
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Radio alarm clock with iPod connectivity
@@ -227,4 +244,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

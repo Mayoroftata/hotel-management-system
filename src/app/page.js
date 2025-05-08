@@ -1,14 +1,13 @@
 "use client";
-import React from 'react'
-import HeroSection from '@/components/HeroSection';
-import WhyBookWithUs from '@/components/WhyBookWithUs';
-import TopRoom from '@/components/TopRoom';
-import Footer from '@/components/Footer';
-import DiscoverExplore from '@/components/DiscoverExplore';
-import NavBar from '@/components/NavBar';
+import React from "react";
+import HeroSection from "@/components/HeroSection";
+import WhyBookWithUs from "@/components/WhyBookWithUs";
+import TopRoom from "@/components/TopRoom";
+import Footer from "@/components/Footer";
+import DiscoverExplore from "@/components/DiscoverExplore";
+import NavBar from "@/components/NavBar";
 
-
-const page = () => {
+const Page = () => {
   return (
     <div>
       <NavBar />
@@ -18,7 +17,7 @@ const page = () => {
       <DiscoverExplore />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;

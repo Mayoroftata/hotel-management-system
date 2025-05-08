@@ -4,9 +4,9 @@ import Recommendations from "@/components/Recommendations";
 import Link from "next/link";
 import React from "react";
 import NavBar from "@/components/NavBar";
-import Image from 'next/image'; // Import Image component
+import Image from "next/image"; // Import Image component
 
-const page = () => {
+const Page = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Navigation Bar */}
@@ -113,4 +113,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

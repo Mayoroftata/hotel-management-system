@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import UserNav from "@/components/NavBar";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <UserNav />
@@ -248,4 +248,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
