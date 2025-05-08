@@ -153,7 +153,7 @@ export default function ProfilePage() {
           {/* Footer */}
           <footer className="mt-8 text-center text-gray-400">
             <p>
-              Thank you for choosing TravelEase. We're dedicated to making your
+              Thank you for choosing TravelEase. We&apos;re dedicated to making your
               travel experience the best it can be. If you have any questions or
               need assistance, don&apos;t hesitate to reach out to us.
             </p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Import Image component
 
 const Recommendations = () => {
     // Sample data for recommendations
@@ -92,7 +93,8 @@ const Recommendations = () => {
                         className="bg-white rounded-lg shadow-md overflow-hidden"
                     >
                         {/* Image */}
-                        <img
+                        <Image
+                            width={500}
                             src={hotel.image}
                             alt={hotel.name}
                             className="w-full h-48 object-cover"

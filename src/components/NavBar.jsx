@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Image } from "next/image";
 
 
 export default function NavBar() {
@@ -207,7 +208,7 @@ export default function NavBar() {
           <div className="relative">
             <button onClick={toggleUserDropdown} className="flex items-center focus:outline-none">
               {userImage ? (
-                <img src={userImage} alt="User" className="h-10 w-10 rounded-full border border-gray-300" />
+                <Image src={userImage} alt="User" className="h-10 w-10 rounded-full border border-gray-300" />
               ) : (
                 <FaUserCircle className="h-10 w-10 text-gray-500" />
               )}

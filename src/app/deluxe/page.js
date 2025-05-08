@@ -42,7 +42,7 @@ const Page = () => {
               lit, tastefully decorated, and comfortably furnished. This Deluxe
               Room features a large picture window that allows abundant natural
               light to drift in during the day. Lutyens-style furnishings sit
-              alongside the hotel's Tree of Life leitmotif, while a king-size
+              alongside the hotel&apos;s Tree of Life leitmotif, while a king-size
               bed takes center stage.
             </p>
             <div className="flex justify-between">

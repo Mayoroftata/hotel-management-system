@@ -284,7 +284,7 @@ export default function Page() {
               <p className="text-sm font-medium">Email Support</p>
               <p className="text-sm">
                 For detailed inquiries or issues, email us at
-                support@Deeluck.com, and we'll get back to you within 24 hours.
+                support@Deeluck.com, and we&#39;ll get back to you within 24 hours.
               </p>
             </div>
           </section>
@@ -318,9 +318,9 @@ export default function Page() {
 
         {/* Footer */}
         <footer className="bg-blue-900 p-4 text-center text-white outline outline-white">
-          Thank you for choosing Deeluck. We're dedicated to making your travel
+          Thank you for choosing Deeluck. We&#39;re dedicated to making your travel
           experience the best it can be. If you have any questions or need
-          assistance, don't hesitate to reach out to us.
+          assistance, don&#39;t hesitate to reach out to us.
         </footer>
       </div>
       <Footer />

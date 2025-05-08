@@ -123,7 +123,7 @@ const Page = () => {
             rooms provide Wi-Fi, smart TVs, and safes, plus sofas and minibars.
           </p>
           <p className="text-gray-600 mb-2">
-            There's a lobby bar, an informal grill, and a buffet restaurant
+            There&apos;s a lobby bar, an informal grill, and a buffet restaurant
             featuring a terrace. Other amenities consist of an outdoor pool, a
             sundock and a fitness room, as well as breakfast, event space, and
             parking.

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import UserNav from "@/components/NavBar";
 import React from "react";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -23,34 +24,46 @@ const Page = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Image Gallery */}
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 mb-8 md:grid-cols-2">
-          <img
+          <Image
             src="/img/TopRoom5.jpg"
             alt="Room View"
-            className="h-64 rounded-lg shadow-md w-full object-cover"
+            width={500}
+            height={256}
+            className="rounded-lg shadow-md w-full object-cover"
           />
-          <img
+          <Image
             src="/img/DeluxeRoom1Image5.png"
             alt="Outdoor Lounge"
+            width={500}
+            height={256}
             className="h-64 rounded-lg shadow-md w-full object-cover"
           />
-          <img
+          <Image
             src="/img/DeluxeRoom1Image2.png"
             alt="Bedroom"
+            width={500}
+            height={256}
             className="h-64 rounded-lg shadow-md w-full object-cover"
           />
-          <img
+          <Image
             src="/img/DeluxeRoom1Image3.png"
             alt="Living Area"
+            width={500}
+            height={256}
             className="h-64 rounded-lg shadow-md w-full object-cover"
           />
-          <img
+          <Image
             src="/img/DeluxeRoom1Image4.png"
             alt="Dining Area"
+            width={500}
+            height={256}
             className="h-64 rounded-lg shadow-md w-full object-cover"
           />
-          <img
+          <Image
             src="/img/DeluxeRoom1Image1.png"
             alt="Bar Area"
+            width={500}
+            height={256}
             className="h-64 rounded-lg shadow-md w-full object-cover"
           />
         </div>
@@ -112,7 +125,7 @@ const Page = () => {
             with sun loungers. Room service is available 24/7.
           </p>
           <p className="text-gray-600 mb-2">
-            There's a lobby bar, an informal grill, and a buffet restaurant
+            There&apos;s a lobby bar, an informal grill, and a buffet restaurant
             featuring a terrace. Other amenities consist of an outdoor pool, a
             sundock and a fitness room, as well as breakfast, event space, and
             parking.
@@ -141,7 +154,7 @@ const Page = () => {
                 Blackout roller blinds
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                12" pillow top mattress
+                12&quot; pillow top mattress
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Hypoallergenic goose down pillows and duvets
@@ -194,7 +207,7 @@ const Page = () => {
                 Dual telephone lines
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
-                49" FHD television
+                49&quot; FHD television
               </button>
               <button className="bg-gray-200 rounded-md text-gray-800 duration-300 hover:bg-gray-300 px-4 py-2 transition">
                 Wide range of national and international news, sports and film

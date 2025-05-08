@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Recommendations from "@/components/Recommendations";
 import NavBar from "@/components/NavBar";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -14,9 +15,11 @@ const Page = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Image Carousel */}
         <div className="mb-8 relative">
-          <img
+          <Image
             src="/img/TopRoom1.jpg"
             alt="Penthouse Living Room"
+            width={1920}
+            height={1080}
             className="h-96 rounded-lg shadow-md w-full object-cover"
           />
           {/* Navigation Arrows */}
@@ -106,14 +109,18 @@ const Page = () => {
             sitting on the brand new furnishing.
           </p>
           <div className="flex mt-4 space-x-4">
-            <img
+            <Image
               src="/img/Penthouse1.jpg"
               alt="Penthouse Overview"
+              width={600}
+              height={400}
               className="h-60 rounded-lg w-full mt-4 object-cover"
             />
-            <img
+            <Image
               src="/img/Penthouse2.jpg"
               alt="Penthouse Overview"
+              width={600}
+              height={400}
               className="h-60 rounded-lg w-full mt-4 object-cover"
             />
           </div>
