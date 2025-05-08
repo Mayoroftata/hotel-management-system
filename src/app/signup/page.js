@@ -8,6 +8,7 @@ import { basicSchema } from './schemas/page'
 import { useRouter } from 'next/navigation'
 import PulseLoader from 'react-spinners/PulseLoader'
 import { signIn } from "next-auth/react"
+import axios from 'axios'
 
 const Page = () => {
     const router = useRouter()
@@ -17,20 +18,40 @@ const Page = () => {
     const showSuccessToast = (message) => {
         toast.success(message);
     };
+    // Error Toast
+    const showErrorToast = (message) => {
+        toast.error(message);
+    };
 
     const onSubmit = (values, { resetForm }) => {
+        setIsLoading(true);
         console.log("Form submitted", values);
-        setIsLoading(true)
-
-        setTimeout(() => {
-            resetForm()
-            showSuccessToast("Signed up successfully")
-            localStorage.setItem("userInfo", JSON.stringify(values))
-            setTimeout(() => {
-                router.push("/signin")
-            }, 1500);
-        }, 2000);
-    }
+    
+        axios.post("http://localhost:3000/api/register", values)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data.status === "success") { // Adjust to the response format from backend
+                    showSuccessToast(res.data.message);
+                    localStorage.setItem("userInfo", JSON.stringify(values));
+                    setTimeout(() => {
+                        router.push("/signin");
+                    }, 2000);
+                } else if (res.data.status === "error") { // Adjust the backend response
+                    showErrorToast("User already exists");
+                    setIsLoading(false);
+                }
+            })
+            .catch((err) => {
+                setIsLoading(false);
+                console.log(err);
+                if (err.response && err.response.data && err.response.data.message) {
+                    showErrorToast(err.response.data.message);
+                } else {
+                    showErrorToast("Something went wrong");
+                }
+            });
+    };
+    
 
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         initialValues: {
@@ -42,8 +63,28 @@ const Page = () => {
     console.log(errors);
 
     const googleSign = async () => {
-        await signIn("google", { callbackUrl: "/Client/ClientDashboard" })
-    }
+            try {
+              setIsLoading(true);
+          
+              // Trigger Google sign-in
+              const result = await signIn("google", { redirect: false });
+          
+              if (result?.error) {
+                setIsLoading(false);
+                showErrorToast(result.error || "Google sign-in failed");
+                return;
+              }
+          
+              // Redirect to the dashboard after successful sign-in
+              showSuccessToast("Google sign-in successful");
+              setTimeout(() => {
+                window.location.href = "/Client/ClientDashboard";
+              }, 2000);
+            } catch (error) {
+              setIsLoading(false);
+              showErrorToast("Something went wrong during Google sign-in");
+            }
+          };
 
     return (
         <div>
@@ -55,13 +96,17 @@ const Page = () => {
                         <form onSubmit={handleSubmit} className='space-y-2'>
                             <div className='flex space-x-3'>
                                 <div className='w-full'>
-                                    <input name='firstname' onBlur={handleBlur} value={values.firstname} onChange={handleChange} className={`p-2 w-full border border-gray-300  rounded-lg focus:outline-none ${errors.firstname && touched.firstname ? "border-red-500" : "focus:border-blue-900"}`} type="text" placeholder='First name' />
-                                    {errors.firstname && touched.firstname && (<p className="text-red-500 text-sm">{errors.firstname}</p>)}
+                                    <input name='firstName' onBlur={handleBlur} value={values.firstName} onChange={handleChange} className={`p-2 w-full border border-gray-300  rounded-lg focus:outline-none ${errors.firstName && touched.firstName ? "border-red-500" : "focus:border-blue-900"}`} type="text" placeholder='First name' />
+                                    {errors.firstName && touched.firstName && (<p className="text-red-500 text-sm">{errors.firstName}</p>)}
                                 </div>
                                 <div className='w-full'>
-                                    <input name='lastname' onBlur={handleBlur} value={values.lastname} onChange={handleChange} className={`p-2 w-full border border-gray-300 rounded-lg focus:outline-none  ${errors.lastname && touched.lastname ? "border-red-500" : "focus:border-blue-900"}`} type="text" placeholder='Last name' />
-                                    {errors.lastname && touched.lastname && (<p className="text-red-500 text-sm">{errors.lastname}</p>)}
+                                    <input name='lastName' onBlur={handleBlur} value={values.lastName} onChange={handleChange} className={`p-2 w-full border border-gray-300 rounded-lg focus:outline-none  ${errors.lastName && touched.lastName ? "border-red-500" : "focus:border-blue-900"}`} type="text" placeholder='Last name' />
+                                    {errors.lastName && touched.lastName && (<p className="text-red-500 text-sm">{errors.lastName}</p>)}
                                 </div>
+                            </div>
+                            <div>
+                                <input name='phoneNumber' onBlur={handleBlur} value={values.phoneNumber} onChange={handleChange} className={`p-2 w-full border border-gray-300 rounded-lg focus:outline-none  ${errors.username && touched.username ? "border-red-500" : "focus:border-blue-900"}`} type="text" placeholder='Phone Number' />
+                                {errors.phoneNumber && touched.phoneNumber && (<p className="text-red-500 text-sm">{errors.phoneNumber}</p>)}
                             </div>
                             <div>
                                 <input name='email' onBlur={handleBlur} value={values.email} onChange={handleChange} className={`p-2 w-full border border-gray-300 rounded-lg focus:outline-none  ${errors.email && touched.email ? "border-red-500" : "focus:border-blue-900"}`} type="email" placeholder='Email' />

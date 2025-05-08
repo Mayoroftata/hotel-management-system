@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { loginSchema } from './schema/page'
 import PulseLoader from 'react-spinners/PulseLoader'
 import { signIn } from "next-auth/react"
+import axios from 'axios'
 
 const Page = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -23,21 +24,35 @@ const Page = () => {
 
     const onSubmit = (values, { resetForm }) => {
         console.log("Form submitted", values);
-        setIsLoading(true)
-
-        setTimeout(() => {
-            const storedUser = JSON.parse(localStorage.getItem('userInfo'))
-            console.log(localStorage);
-
-            if (storedUser.email !== values.email || storedUser.password !== values.password) {
-                showErrorToast("Incorrect email or password")
-            } else {
-                showSuccessToast(`Welcome, ${storedUser.firstname}! You have successfully signed in.`)
-                resetForm()
-            }
-            setIsLoading(false)
-        }, 2000);
-    }
+        setIsLoading(true);
+    
+        axios.post("http://localhost:3000/api/login", values)
+            .then((res) => {
+                console.log(res.data);
+    
+                if (res.status === 200) { // 201 means login successful from your backend
+                    showSuccessToast(res.data.message);
+                    localStorage.setItem("token", res.data.token); 
+                    resetForm();
+                    setTimeout(() => {
+                        window.location.href = "/Client/ClientDashboard"; 
+                    }, 2000);
+                } else {
+                    setIsLoading(false);
+                    showErrorToast(res.data.message || "User does not exist");
+                }
+            })
+            .catch((err) => {
+                setIsLoading(false);
+                console.log(err);
+                if (err.response && err.response.data && err.response.data.message) {
+                    showErrorToast(err.response.data.message);
+                } else {
+                    showErrorToast("Something went wrong");
+                }
+            });
+    };
+    
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         initialValues: {
             email: '', password: ''
@@ -54,11 +69,28 @@ const Page = () => {
 
     // }
     const googleSign = async () => {
-        await signIn("google", { callbackUrl: "/Client/ClientDashboard" })
-    }
-    const facebookSign = async () => {
-        await signIn("facebook", { callbackUrl: "http://localhost:3000/bookingsuccessful" })
-    }
+        try {
+          setIsLoading(true);
+      
+          // Trigger Google sign-in
+          const result = await signIn("google", { redirect: false });
+      
+          if (result?.error) {
+            setIsLoading(false);
+            showErrorToast(result.error || "Google sign-in failed");
+            return;
+          }
+      
+          // Redirect to the dashboard after successful sign-in
+          showSuccessToast("Google sign-in successful");
+          setTimeout(() => {
+            window.location.href = "/Client/ClientDashboard";
+          }, 2000);
+        } catch (error) {
+          setIsLoading(false);
+          showErrorToast("Something went wrong during Google sign-in");
+        }
+      };
     return (
         <div>
             <div className='justify-center flex items-center  min-h-screen bg-blue-900'>
@@ -90,7 +122,8 @@ const Page = () => {
                             <hr className='flex-1 border-gray-300' />
                         </div>
                         <div className=''>
-                            <button onClick={googleSign} type='button' className='bg-blue-900 rounded-lg w-full py-2 flex items-center justify-center'><Image alt='google' src="/images/google.svg" width={23} height={1} /></button>
+                            <button onClick={googleSign} type='button' className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/google.svg" width={23} height={1} /></button>
+                           
                             {/* <button className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='google' src="/images/github.svg" width={30} height={1} /></button>
                             <button onClick={facebookSign} type='button' className='bg-blue-900 rounded-lg w-1/3 py-1 flex items-center justify-center'><Image alt='facebook' src="/images/facebook.svg" width={21} height={1} /></button> */}
                         </div>
